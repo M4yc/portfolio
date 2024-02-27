@@ -1,0 +1,90 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+#typed-text {
+    display: inline-block;
+    font-size: 24px;
+    color: #3498db; /* Azul claro */
+    font-weight: bold;
+}
+
+#typed-text::after {
+    content: "|"; /* Cursor piscante */
+    animation: blink 0.7s infinite; /* Animação do cursor piscante */
+}
+
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+nav {
+    background-color: #444;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+section {
+    background-color: #f4f4f4;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#home {
+    text-align: center;
+}
+
+#about {
+    text-align: justify;
+}
+
+#projects {
+    text-align: center;
+}
+
+#project-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
