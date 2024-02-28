@@ -186,6 +186,10 @@ article.active {
 100% { opacity: 1; }
 }
 
+.abount-text p{
+    color: #e6d3d3;
+    text-align: center;
+}
 .h2,
 .h3,
 .h4,
