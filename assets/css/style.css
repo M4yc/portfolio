@@ -32,11 +32,6 @@ header, .home {
     z-index: 1; /* Garante que o conteúdo fique acima da sobreposição */
 }
 
-.projects {
-    position: relative;
-    z-index: 1;
-    
-}
 body {
     background-color: black;
     font-family: Arial, sans-serif;
@@ -81,7 +76,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    color: var(--red-color);
+    color: white;
 }
 img {
     width: 48px;
@@ -253,3 +248,12 @@ img {
 }
 
 /* SECTION Projetos  */
+.projects {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+
+}
