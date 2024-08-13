@@ -1,55 +1,39 @@
-// Pegando o elemento do Canvas
-const c = document.getElementById("matrix");
+const canvas = document.getElementById('matrix');
+const ctx = canvas.getContext('2d');
 
-// Definindo o seu contexto
-const ctx = c.getContext("2d");
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = document.body.scrollHeight;
+}
 
-// definindo o canvas com tamanho máximo da tela
-c.height = window.innerHeight;
-c.width = window.innerWidth;
+window.addEventListener('resize', resizeCanvas);
+resizeCanvas(); // Chama a função para garantir o ajuste inicial
 
-// letras do Matrix Rain
-// ver mais em: https://bit.ly/3yFJoU3
-const letters = ["日","ﾊ","ﾐ","ﾋ","ｰ","ｳ","ｼ","ﾅ","ﾓ","ﾆ","ｻ","ﾜ","ﾂ","ｵ","ﾘ","ｱ","ﾎ","ﾃ","ﾏ","ｹ","ﾒ","ｴ","ｶ","ｷ","ﾑ","ﾕ","ﾗ","ｾ","ﾈ","ｽ","ﾀ","ﾇ","ﾍ",":","・",".","=","*","+","-","<",">","¦","｜","ﾘ"];
-
+// Letras do Matrix Rain
+const letters = ["日", "ﾊ", "ﾐ", "ﾋ", "ｰ", "ｳ", "ｼ", "ﾅ", "ﾓ", "ﾆ", "ｻ", "ﾜ", "ﾂ", "ｵ", "ﾘ", "ｱ", "ﾎ", "ﾃ", "ﾏ", "ｹ", "ﾒ", "ｴ", "ｶ", "ｷ", "ﾑ", "ﾕ", "ﾗ", "ｾ", "ﾈ", "ｽ", "ﾀ", "ﾇ", "ﾍ", ":", "・", ".", "=", "*", "+", "-", "<", ">", "¦", "｜", "ﾘ"];
 const fontSize = 18;
-
-// definindo quantas colunas serão necessárias pelo tamanho da tela e fonte
-const columns = c.width / fontSize;
-
-// criando um array para cada gota, sempre iniciando na posição do y=1
+const columns = canvas.width / fontSize;
 const drops = new Array(Math.floor(columns)).fill(1);
 
 function draw() {
-  // preenchendo a tela toda de preto com opacidade
-  // esse truque da opacidade será útil para o efeito 
-  // das letras sumindo aos poucos
-    ctx.fillStyle = "rgba(0, 0, 0, 0.05)";
-    ctx.fillRect(0, 0, c.width, c.height);
+    ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  // definindo a cor e estilo da fonte
     ctx.fillStyle = "#8800ff";
     ctx.font = `${fontSize}px arial`;
 
     for (let i = 0; i < drops.length; i++) {
-    // pegando uma letra randomicamente no nosso array
         const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-    // escrevendo na tela
-    ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+        }
 
-    // resetando a posição da gota ao chegar no fim
-    if (drops[i] * fontSize > c.height && Math.random() > 0.95) {
-        drops[i] = 0;
+        drops[i]++;
     }
 
-    // movendo as gotas no eixo y
-    drops[i]++;
-    }
-
-  // chamada recursiva para animar quadro a quadro
     window.requestAnimationFrame(draw);
 }
 
-// chamando a função criada
-draw()
+draw();
