@@ -365,39 +365,54 @@ img {
         top: 27px
     }
 }
-
+/* Experience */
+.s-experience {
+    background-color: #151515;
+    color: #fff;
+    padding: 96px 48px;
+}
 
 /* FOOTER */
 footer {
-    width: 100%;
-    height: auto;
-    background-color: #151515;
-    color: #fff;
-    padding: 24px 0px
+    background-color: #151515; /* Fundo escuro */
+    color: #ffffff; /* Texto branco */
+    padding: 25px 15%; /* Espaçamento interno */
+    text-align: center; /* Centraliza o texto */
 }
 
-footer .grid-layout {
+.grid-layout {
     display: flex;
+    justify-content: space-between; /* Espaço entre o texto e o logo */
     align-items: center;
-    justify-content: space-between;
-    width: 100%
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas menores */
 }
 
 footer p {
-    font-size: 1.8rem
+    margin: 0; /* Remove margem padrão */
+    font-size: 18px; /* Tamanho do texto */
 }
 
-footer p a {
-    font-weight: 500;
-    color: #986dff
+footer a {
+    color: var(--primary-color); /* Cor do link */
+    text-decoration: none; /* Remove sublinhado do link */
+    padding-right: 4px;
 }
 
-footer img {
-    width: 32px
+footer a:hover {
+    text-decoration: underline; /* Sublinha ao passar o mouse */
 }
 
-footer div {
+.powered-by {
     display: flex;
     align-items: center;
-    gap: 16px
+}
+
+.powered-by p {
+    margin-right: 10px; /* Espaço entre o texto e o logo */
+}
+
+.powered-by img {
+    width: 42px; /* Largura do logo */
+    height: auto; /* Mantém a proporção do logo */
+    margin-left: 10px; /* Espaço entre o texto e a logo */
 }
