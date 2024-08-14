@@ -11,6 +11,31 @@
     --green-color: #38F299;
 }
 
+/* Estiliza a barra de rolagem */
+::-webkit-scrollbar {
+    width: 12px; /* Largura da barra de rolagem */
+    border-radius: 10px; /* Arredonda as bordas da barra de rolagem */
+}
+
+/* Estiliza o fundo da barra de rolagem */
+::-webkit-scrollbar-track {
+    background: #151515; /* Cor de fundo do track da barra de rolagem */
+    border-radius: 10px; /* Arredonda as bordas do track */
+}
+
+/* Estiliza a parte que é movida da barra de rolagem (thumb) */
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color); /* Cor roxa */
+    border-radius: 10px; /* Arredonda as bordas do thumb */
+    
+}
+
+/* Opcional: Adiciona um efeito ao passar o mouse */
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--primaryB-color); /* Cor mais escura ao passar o mouse */
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -37,6 +62,7 @@ body {
     background-color: black;
     font-family: Arial, sans-serif;
     overflow: hidden; /* Para evitar scroll indesejado */
+    overflow-x: hidden; /* Remove o scroll horizontal */
 }
 
 canvas {
