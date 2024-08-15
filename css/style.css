@@ -11,30 +11,6 @@
     --green-color: #38F299;
 }
 
-/* Estiliza a barra de rolagem */
-::-webkit-scrollbar {
-    width: 12px; /* Largura da barra de rolagem */
-    border-radius: 10px; /* Arredonda as bordas da barra de rolagem */
-}
-
-/* Estiliza o fundo da barra de rolagem */
-::-webkit-scrollbar-track {
-    background: #151515; /* Cor de fundo do track da barra de rolagem */
-    border-radius: 10px; /* Arredonda as bordas do track */
-}
-
-/* Estiliza a parte que é movida da barra de rolagem (thumb) */
-::-webkit-scrollbar-thumb {
-    background-color: var(--primary-color); /* Cor roxa */
-    border-radius: 10px; /* Arredonda as bordas do thumb */
-    
-}
-
-/* Opcional: Adiciona um efeito ao passar o mouse */
-::-webkit-scrollbar-thumb:hover {
-    background-color: var(--primaryB-color); /* Cor mais escura ao passar o mouse */
-}
-
 
 * {
     margin: 0;
@@ -63,6 +39,9 @@ body {
     font-family: Arial, sans-serif;
     overflow: hidden; /* Para evitar scroll indesejado */
     overflow-x: hidden; /* Remove o scroll horizontal */
+    background: #081b29;
+    color: #ffffff;
+    overflow: auto;
 }
 
 canvas {
@@ -72,11 +51,6 @@ canvas {
     z-index: -1; /* Coloca o canvas no fundo */
 }
 
-body {
-    background: #081b29;
-    color: #ffffff;
-    overflow: auto;
-}
 .header {
     position: fixed;
     top: 0;
@@ -91,6 +65,8 @@ body {
 
 }
 .logo {
+    display: flex;
+    gap: 10px;
     align-items: center;
     justify-content: center;
     font-size: 20px;
@@ -99,10 +75,13 @@ body {
     font-weight: 600;
 
 }
+.logo img {
+    height: 42px;
+    width: 48px;
+}
 .header a{
     justify-content: center;
     align-items: center;
-
     color: white;
 }
 img {
