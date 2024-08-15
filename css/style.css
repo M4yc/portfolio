@@ -9,6 +9,7 @@
     --secondary-colorW: #403DD3;
     --red-color: #FF0000;
     --green-color: #38F299;
+    --gray-color: #151515;
 }
 
 
@@ -458,9 +459,9 @@ img {
 }
 
 .s-projects h2 {
-    font-size: 24px;
+    font-size: 32px;
     margin-bottom: 40px;
-    color: #333;
+    color: #ffffff;
 }
 
 .projects-grid {
@@ -470,7 +471,7 @@ img {
 }
 
 .project-card {
-    background-color: #fff;
+    background-color: var(--gray-color);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
@@ -487,13 +488,13 @@ img {
 
 .project-card h3 {
     font-size: 20px;
-    color: #333;
+    color: #ffffff;
     margin-bottom: 10px;
 }
 
 .project-card p {
     font-size: 14px;
-    color: #777;
+    color: #ffffff;
     margin-bottom: 15px;
 }
 
@@ -503,15 +504,26 @@ img {
 
 .tags span {
     display: inline-block;
-    background-color: #e0e0e0;
-    color: #555;
+    color: #ffffff;
+    border: 1px solid var(--green-color);
     padding: 5px 10px;
-    border-radius: 5px;
+    border-radius: 20px;
     font-size: 12px;
     margin-right: 5px;
     margin-bottom: 5px;
 }
-
+.tags .span-html{
+    border: 1px solid rgb(255, 81, 0);
+}
+.tags .span-css{
+    border: 1px solid rgb(0, 195, 255);
+}
+.tags .span-javascript{
+    border: 1px solid rgb(255, 251, 0);
+}
+.tags .span-arduino{
+    border: 1px solid #009297;
+}
 .btn-live-demo {
     display: inline-block;
     background-color: #5F07BF;
@@ -530,13 +542,14 @@ img {
 .s-services {
     padding: 60px 10%;
     text-align: center;
-    background-color: #f9f9f9;
+    background-color: var(--gray-color);
+    
 }
 
 .s-services h2 {
-    font-size: 24px;
+    font-size: 32px;
     margin-bottom: 40px;
-    color: #333;
+    color: white;
 }
 
 .services-grid {
@@ -546,12 +559,17 @@ img {
 }
 
 .service-card {
-    background-color: #fff;
+    background-color: #111;
+    border: 1px solid #1f1f1f;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex; /* Adiciona flexbox */
+    flex-direction: column; /* Organiza os itens na coluna */
+    align-items: center; /* Centraliza horizontalmente */
+    justify-content: center; /* Centraliza verticalmente */
 }
 
 .service-card:hover {
@@ -560,31 +578,33 @@ img {
 }
 
 .service-card .icon {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 20px;
-}
-
-.service-card .icon img {
-    width: 100%;
-    height: auto;
+    font-size: 48px; /* Ajuste o tamanho do ícone conforme necessário */
+    color: white; /* Cor do ícone */
+    margin-bottom: 15px; /* Espaço entre o ícone e o título */
+    display: flex; /* Adiciona flexbox */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    
 }
 
 .service-card h3 {
-    font-size: 20px;
-    color: #333;
-    margin-bottom: 15px;
+    font-size: 16px; /* Ajuste o tamanho do título */
+    color: white; /* Cor do título */
+    margin-bottom: 15px; /* Espaço entre o título e a descrição */
 }
 
 .service-card p {
-    font-size: 14px;
-    color: #777;
-    line-height: 1.6;
+    font-size: 14px; /* Tamanho do texto */
+    color: white; /* Cor do texto */
+    line-height: 1.6; /* Espaçamento entre linhas */
 }
 /*Contact*/
 .s-contact {
+    background: linear-gradient(to right, rgba(75, 3, 153, 0.8), rgba(86, 5, 172, 0.8)),url(/assets/svg/common-bg.svg);
+    background-size: cover;
+    background-position: center;
     padding: 60px 10%;
-    background: linear-gradient(135deg, #5F07BF, #8438D7);
+    /*background: linear-gradient(135deg, #5F07BF, #8438D7);*/
     color: #fff;
     text-align: center;
 }
