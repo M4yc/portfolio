@@ -109,15 +109,35 @@ img {
 }
 .home {
     height: 100vh;
-    background: url();
     display: flex;
     align-items: center;
     padding: 0 10%;
+    justify-content: space-between;
 
 }
 .home-content {
     max-width: 700px;
+    flex: 1;
+    text-align: left; /* Garante que o texto fique alinhado à esquerda */
 }
+
+.home-avatar {
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    max-width: 400px;
+    max-height: 350px;
+}
+
+.home-avatar img {
+    height: 100%;
+    width: 100%;
+    
+    align-items: center;
+    justify-items: center;
+    border-radius: 50%; /* Deixa a imagem em formato circular */
+}
+
 .home-content h1 {
     font-size: 56px;
     font-weight: 700;
@@ -316,7 +336,7 @@ img {
 
 .about-content img {
     max-width: 500px; /* Tamanho máximo da imagem */
-    max-height: 500px;
+    max-height: 450px;
     width: 100%;
     height: auto;
     border-radius: 10px;
