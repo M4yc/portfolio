@@ -113,29 +113,17 @@ img {
     align-items: center;
     padding: 0 10%;
     justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribui espaço entre o texto e a imagem */
+    padding: 20px 10%;
+    height: 100vh; /* Garante que a seção ocupe a altura total da tela */
 
 }
 .home-content {
     max-width: 700px;
     flex: 1;
     text-align: left; /* Garante que o texto fique alinhado à esquerda */
-}
-
-.home-avatar {
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-    max-width: 400px;
-    max-height: 350px;
-}
-
-.home-avatar img {
-    height: 100%;
-    width: 100%;
-    
-    align-items: center;
-    justify-items: center;
-    border-radius: 50%; /* Deixa a imagem em formato circular */
 }
 
 .home-content h1 {
@@ -496,6 +484,11 @@ img {
     border-radius: 10px;
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
     text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.project-card:hover{
+    transform: translateY(-10px);
+    box-shadow: 0px 0px 20px rgba(73, 73, 73, 0.2);
 }
 
 .project-card img {
@@ -544,20 +537,43 @@ img {
 .tags .span-arduino{
     border: 1px solid #009297;
 }
+.tags .span-python{
+    border: 1px solid #33638B;
+}
+.tags .span-game{
+    border: 1px solid #ff0202;
+}
+.buttons {
+    display: flex;
+    gap: 4%;
+}
 .btn-live-demo {
-    display: inline-block;
-    background-color: #5F07BF;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
+    color: white;
     text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+    font-size: 16px;
+    border: none;
+    background: none;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
 }
 
-.btn-live-demo:hover {
-    background-color: #3C0479;
+.btn-live-demo::before {
+    margin-left: auto;
 }
+.btn-live-demo::after, .btn-live-demo::before {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: var(--primary-color);
+    display: block;
+    transition: 0.5s;
+}
+
+.btn-live-demo:hover::after, .btn-live-demo:hover::before {
+    width: 100%;
+}
+
+
 /* Services */
 .s-services {
     padding: 60px 10%;
