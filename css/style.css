@@ -175,66 +175,59 @@ img {
 
 .btn-box {
     display: flex;
-    justify-content: flex-start; /* Alinha os botões à esquerda */
-    flex-wrap: wrap; /* Permite que os botões se movam para a linha seguinte se necessário */
-    gap: 15px; /* Espaçamento entre os botões */
-    width: 100%; /* Faz com que o contêiner ocupe toda a largura disponível */
-    max-width: 500px; /* Limita a largura máxima do contêiner se necessário */
-    height: auto; /* Ajusta a altura do contêiner com base no conteúdo */
-    margin: 0; /* Remove margens adicionais, se necessário */
+    justify-content: flex-start;
+    gap: 15px; /* Espaço entre os botões */
+    margin: 20px 0;
 }
 
-.btn-box a {
-    display: inline-flex; /* Faz com que o botão ajuste seu tamanho ao conteúdo */
-    align-items: center;
-    padding: 10px 20px; /* Adiciona espaçamento interno ao botão */
-    background: var(--primary-color);
-    border: 2px solid var(--primary-color);
-    border-radius: 8px;
-    font-size: 18px;
-    color: #081b29;
-    text-decoration: none;
-    font-weight: 600;
-    letter-spacing: 1px;
-    z-index: 1;
+.btn-box {
+    display: flex;
+    gap: 20px;
+}
+
+button {
+    --color: var(--primary-color);
+    font-family: inherit;
+    display: inline-block;
+    padding: 10px 20px;
+    position: relative;
+    cursor: pointer;
     overflow: hidden;
-    transition: .5s;
-    white-space: nowrap; /* Impede a quebra de linha do texto */
-    text-align: center; /* Alinha o texto no centro do botão */
-    box-sizing: border-box; /* Inclui a borda e o padding no cálculo da largura e altura */
+    border: 2px solid var(--color);
+    transition: color 0.5s;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 6px;
+    font-weight: 500;
+    color: var(--color);
+    background-color: transparent;
 }
 
-.btn-box a:hover{
-    color: var(--primary-color);
-}
-.btn-box a:nth-child(2){
-    background: transparent;
-    color: var(--primary-color);
-
-}
-
-.btn-box a:nth-child(2):hover{
-    color: var(--primaryB-color);
-}
-
-.btn-box a:nth-child(2)::before{
-    background: var(--primary-color);
-}
-
-.btn-box a::before{
-    content: '';
+button:before {
+    content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background: var(--primaryB-color);
     z-index: -1;
-    transition: .5s;
+    background: var(--color);
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+    top: 100%;
+    left: 100%;
+    transition: all 0.7s;
 }
 
-.btn-box a:hover::before{
-    width: 100%;
+button:hover {
+    color: #fff;
+}
+
+button:hover:before {
+    top: -30px;
+    left: -30px;
+}
+
+button:active:before {
+    background: #3a0ca3;
+    transition: background 0s;
 }
 
 .home-sci{
