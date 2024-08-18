@@ -327,6 +327,7 @@ button:active:before {
     height: 100vh; /* Altura da seção */
     padding: 20px;
     background-color: transparent; /* Remove o fundo da seção */
+    
     z-index: 3;
 }
 
@@ -339,8 +340,8 @@ button:active:before {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1400px;
+    
 }
 
 .about-content {
@@ -363,25 +364,25 @@ button:active:before {
 }
 
 .about-text h4 {
-    font-size: 18px;
+    font-size: 20px;
     color: var(--primary-color);
 }
 
 .about-text h2 {
-    font-size: 32px;
-    margin: 10px 0;
+    font-size: 40px;
+    margin: 5px 0;
     color: white;
 }
 
 .about-text h3 {
     font-weight: 400;
-    font-size: 24px;
+    font-size: 18px;
     color: white;
     margin-bottom: 15px;
 }
 
 .about-text p {
-    font-size: 16px;
+    font-size: 18px;
     color: gray;
     line-height: 1.6;
 }
@@ -649,7 +650,7 @@ button:active:before {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
@@ -693,6 +694,7 @@ button:active:before {
     color: white; /* Cor do texto */
     line-height: 1.6; /* Espaçamento entre linhas */
 }
+
 /*Contact*/
 .s-contact {
     background: linear-gradient(to right, rgba(75, 3, 153, 0.8), rgba(86, 5, 172, 0.8)),url(../assets/svg/common-bg.svg);
@@ -781,6 +783,7 @@ button:active:before {
 .btn-submit:hover {
     background: #8438D7;
 }
+
 
 @media (max-width: 768px) {
     .contact-form {
