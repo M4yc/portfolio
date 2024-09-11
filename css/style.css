@@ -40,20 +40,20 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* Ajuste a opacidade conforme necessário */
+    background-color: rgba(0, 0, 0, 0.3); /* Opacidade*/
     z-index: 0;
 }
 header, .home, .s-about, .projects, .s-experience, .s-projects, .s-services, .s-contact ,.footer {
     position: relative;
-    z-index: 1; /* Garante que o conteúdo fique acima da sobreposição */
+    z-index: 1; /* Posição acima do BG */
 }
 
 
 body {
     background-color: black;
     font-family: Arial, sans-serif;
-    overflow: hidden; /* Para evitar scroll indesejado */
-    overflow-x: hidden; /* Remove o scroll horizontal */
+    overflow: hidden; /* Para evitar scroll*/
+    overflow-x: hidden; 
     background: #081b29;
     color: #ffffff;
     overflow: auto;
@@ -63,7 +63,7 @@ canvas {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1; /* Coloca o canvas no fundo */
+    z-index: -1; /* BG em ultimo */
 }
 
 .header {
@@ -72,7 +72,7 @@ canvas {
     left: 0;
     width: 100%;
     padding: 20px 10%;
-    background: rgba(0, 0, 0, 0.8); /* Fundo preto com 80% de opacidade */
+    background: rgba(0, 0, 0, 0.8); 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -129,9 +129,9 @@ img {
     justify-content: space-between;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Distribui espaço entre o texto e a imagem */
+    justify-content: space-between; 
     padding: 20px 10%;
-    height: 100vh; /* Garante que a seção ocupe a altura total da tela */
+    height: 100vh; 
 
 }
 .home-logo {
@@ -144,7 +144,7 @@ img {
 }
 
 .home-logo img {
-    width: 600px; /* Ajuste o tamanho conforme necessário */
+    width: 600px; 
     height: auto;
     color: #0B07D0;
 }
@@ -152,7 +152,7 @@ img {
 .home-content {
     max-width: 700px;
     flex: 1;
-    text-align: left; /* Garante que o texto fique alinhado à esquerda */
+    text-align: left; 
 }
 
 .home-content h1 {
@@ -176,7 +176,7 @@ img {
 .btn-box {
     display: flex;
     justify-content: flex-start;
-    gap: 15px; /* Espaço entre os botões */
+    gap: 15px; 
     margin: 20px 0;
 }
 
@@ -296,9 +296,9 @@ button:active:before {
     border: 2px solid #eee;
     border-radius: 60px;
     overflow: hidden;
-    position: absolute; /* Posiciona o ícone em relação à section home */
-    bottom: 20px; /* Alinha o ícone 20px acima do fundo da section home */
-    left: 50%; /* Centraliza horizontalmente */
+    position: absolute; 
+    bottom: 20px; 
+    left: 50%; 
 
 }
 
@@ -324,19 +324,19 @@ button:active:before {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Altura da seção */
+    height: 100vh; 
     padding: 20px;
-    background-color: transparent; /* Remove o fundo da seção */
+    background-color: transparent; 
     
     z-index: 3;
 }
 
 .about-container {
-    background-color: #151515; /* Cor de fundo do retângulo */
+    background-color: #151515; 
     border-radius: 10px;
     border: 1px solid #1F1F1F;
     padding: 40px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Sombra para o retângulo */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -351,12 +351,12 @@ button:active:before {
 }
 
 .about-content img {
-    max-width: 500px; /* Tamanho máximo da imagem */
+    max-width: 500px; 
     max-height: 450px;
     width: 100%;
     height: auto;
     border-radius: 10px;
-    object-fit: cover; /* Mantém a proporção da imagem */
+    object-fit: cover; 
 }
 
 .about-text {
@@ -396,20 +396,20 @@ button:active:before {
 
 .social-btn {
     display: inline-block;
-    width: 50px; /* Largura dos botões */
-    height: 50px; /* Altura dos botões */
+    width: 50px; 
+    height: 50px; 
     margin: 5px;
-    border-radius: 10px; /* Arredondar os cantos */
+    border-radius: 10px; 
     color: #fff;
     text-decoration: none;
-    font-size: 24px; /* Tamanho do ícone */
+    font-size: 24px; /* TAmanho Icone*/
     text-align: center;
-    line-height: 50px; /* Alinhamento vertical do ícone */
+    line-height: 50px; 
     transition: background-color 0.3s, transform 0.3s;
 }
 
 .social-btn i {
-    vertical-align: middle; /* Alinhamento vertical do ícone */
+    vertical-align: middle; 
 }
 
 .social-btn.linkedin { background-color: #0077b5; }
@@ -419,8 +419,8 @@ button:active:before {
 .social-btn.behance { background-color: #1769ff; }
 
 .social-btn:hover {
-    transform: scale(1.1); /* Efeito de ampliação ao passar o mouse */
-    background-color: #333; /* Cor de fundo escura para hover, ajuste conforme preferido */
+    transform: scale(1.1); 
+    background-color: #333; 
 }
 /* SECTION Projetos  */
 .projects {
@@ -662,10 +662,10 @@ button:active:before {
     box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex; /* Adiciona flexbox */
-    flex-direction: column; /* Organiza os itens na coluna */
-    align-items: center; /* Centraliza horizontalmente */
-    justify-content: center; /* Centraliza verticalmente */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
 }
 
 .service-card:hover {
@@ -674,25 +674,25 @@ button:active:before {
 }
 
 .service-card .icon {
-    font-size: 48px; /* Ajuste o tamanho do ícone conforme necessário */
-    color: white; /* Cor do ícone */
-    margin-bottom: 15px; /* Espaço entre o ícone e o título */
-    display: flex; /* Adiciona flexbox */
-    align-items: center; /* Centraliza verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
+    font-size: 48px; 
+    color: white; 
+    margin-bottom: 15px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
     
 }
 
 .service-card h3 {
-    font-size: 16px; /* Ajuste o tamanho do título */
-    color: white; /* Cor do título */
-    margin-bottom: 15px; /* Espaço entre o título e a descrição */
+    font-size: 16px; 
+    color: white; 
+    margin-bottom: 15px; 
 }
 
 .service-card p {
-    font-size: 14px; /* Tamanho do texto */
-    color: white; /* Cor do texto */
-    line-height: 1.6; /* Espaçamento entre linhas */
+    font-size: 14px; 
+    color: white; 
+    line-height: 1.6; 
 }
 
 /*Contact*/
@@ -701,7 +701,7 @@ button:active:before {
     background-size: cover;
     background-position: center;
     padding: 60px 10%;
-    /*background: linear-gradient(135deg, #5F07BF, #8438D7);*/
+    
     color: #fff;
     text-align: center;
 }
@@ -795,32 +795,32 @@ button:active:before {
 /* FOOTER */
 footer {
     
-    background-color: #151515; /* Fundo escuro */
-    color: #ffffff; /* Texto branco */
-    padding: 25px 15%; /* Espaçamento interno */
-    text-align: center; /* Centraliza o texto */
+    background-color: #151515; 
+    color: #ffffff; 
+    padding: 25px 15%; 
+    text-align: center; 
 }
 
 .grid-layout {
     display: flex;
-    justify-content: space-between; /* Espaço entre o texto e o logo */
+    justify-content: space-between; 
     align-items: center;
-    flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas menores */
+    flex-wrap: wrap; 
 }
 
 footer p {
-    margin: 0; /* Remove margem padrão */
-    font-size: 18px; /* Tamanho do texto */
+    margin: 0; 
+    font-size: 18px; 
 }
 
 footer a {
-    color: var(--primary-color); /* Cor do link */
-    text-decoration: none; /* Remove sublinhado do link */
+    color: var(--primary-color); 
+    text-decoration: none; 
     padding-right: 4px;
 }
 
 footer a:hover {
-    text-decoration: underline; /* Sublinha ao passar o mouse */
+    text-decoration: underline; 
 }
 
 .powered-by {
@@ -829,11 +829,11 @@ footer a:hover {
 }
 
 .powered-by p {
-    margin-right: 10px; /* Espaço entre o texto e o logo */
+    margin-right: 10px; 
 }
 
 .powered-by img {
-    width: 42px; /* Largura do logo */
-    height: auto; /* Mantém a proporção do logo */
-    margin-left: 10px; /* Espaço entre o texto e a logo */
+    width: 42px; 
+    height: auto; 
+    margin-left: 10px; 
 }
