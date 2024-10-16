@@ -606,30 +606,40 @@ img {
     display: flex;
     gap: 4%;
 }
-.btn-live-demo {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
+
+.project-btn {
+    font-size: 16px; /* Diminui o tamanho do texto */
+    color: #aaaaaa;
+    font-family: 'Poppins', sans-serif; /* Usa a fonte Poppins */
+    font-weight: 800;
+    cursor: pointer;
+    position: relative;
     border: none;
     background: none;
-    font-weight: 600;
-    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    transition: color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    overflow: hidden;
+    text-decoration: none; /* Remove o sublinhado padrão de links */
 }
 
-.btn-live-demo::before {
-    margin-left: auto;
-}
-.btn-live-demo::after, .btn-live-demo::before {
-    content: '';
-    width: 0%;
+.project-btn:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
     height: 2px;
-    background: var(--primary-color);
-    display: block;
-    transition: 0.5s;
+    background-color: var(--primary-color); /* Linha roxa */
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.btn-live-demo:hover::after, .btn-live-demo:hover::before {
+.project-btn:hover {
+    color: #fff;
+}
+
+.project-btn:hover:after {
     width: 100%;
+    left: 0;
 }
 
 
