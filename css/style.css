@@ -448,7 +448,7 @@ img {
 }
 
 .section-title {
-    font-size: 28px;
+    font-size: 32px;
     margin-bottom: 20px;
     text-align: center;
 }
@@ -464,6 +464,7 @@ img {
     flex-direction: column;
     gap: 10px;
     background-color: black;
+    border-radius: 2%;
 }
 
 .company {
@@ -479,9 +480,9 @@ img {
 
 .experience-details {
     flex: 2;
-    border: 1px solid #ddd;
     border-radius: 5px;
     padding: 20px;
+    
 }
 .text-experience div{
     color: white;
@@ -721,12 +722,12 @@ img {
 }
 
 .s-contact h2 {
-    font-size: 28px;
+    font-size: 32px;
     margin-bottom: 20px;
 }
 
 .s-contact p {
-    font-size: 16px;
+    font-size: 18px;
     margin-bottom: 40px;
 }
 
@@ -829,7 +830,7 @@ footer {
 
 footer p {
     margin: 0; 
-    font-size: 18px; 
+    font-size: 16px; 
 }
 
 footer a {
