@@ -6,6 +6,7 @@ function resizeCanvas() {
     canvas.height = document.body.scrollHeight;
 }
 
+
 window.addEventListener('resize', resizeCanvas);
 resizeCanvas(); // Chama a função para garantir o ajuste inicial
 

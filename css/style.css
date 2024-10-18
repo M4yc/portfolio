@@ -25,6 +25,7 @@
     border-radius: 8px
 }
 
+
 * {
     scroll-behavior: smooth;
     margin: 0;
@@ -403,16 +404,18 @@ img {
 .social-btn i {
     vertical-align: middle; 
 }
+.social-btn {
+    background-color: #111;
+    overflow: hidden;
+    border: 2px solid #1f1f1f;
+}
 
-.social-btn.linkedin { background-color: #0077b5; }
-.social-btn.instagram { background-color: #e4405f; }
-.social-btn.discord { background-color: #7289da; }
-.social-btn.github { background-color: #333; }
-.social-btn.behance { background-color: #1769ff; }
 
 .social-btn:hover {
+    color: var(--primary-color);
     transform: scale(1.1); 
-    background-color: #333; 
+    border: 2px solid var(--primary-color);
+    overflow: hidden;
 }
 /* SECTION Projetos  */
 .projects {
