@@ -652,7 +652,6 @@ img {
     padding: 60px 10%;
     text-align: center;
     background-color: var(--gray-color);
-    
 }
 
 .s-services h2 {
@@ -663,7 +662,7 @@ img {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 colunas no padrão */
     gap: 20px;
 }
 
@@ -693,7 +692,6 @@ img {
     display: flex; 
     align-items: center; 
     justify-content: center; 
-    
 }
 
 .service-card h3 {
@@ -707,6 +705,61 @@ img {
     color: white; 
     line-height: 1.6; 
 }
+
+/* RESPONSIVIDADE */
+
+/* Telas médias (tablets) */
+@media (max-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+        gap: 15px; /* Reduz o espaçamento */
+    }
+
+    .s-services h2 {
+        font-size: 28px; /* Reduz o tamanho do título */
+    }
+
+    .service-card h3 {
+        font-size: 15px; /* Reduz o tamanho do subtítulo */
+    }
+
+    .service-card p {
+        font-size: 13px; /* Reduz o tamanho do texto */
+    }
+}
+
+/* Telas pequenas (celulares) */
+@media (max-width: 576px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* 1 coluna */
+        gap: 10px; /* Ainda menos espaçamento */
+    }
+
+    .s-services {
+        padding: 40px 5%; /* Reduz o padding para caber na tela */
+    }
+
+    .s-services h2 {
+        font-size: 24px; /* Título menor */
+    }
+
+    .service-card {
+        padding: 15px; /* Reduz o padding interno */
+    }
+
+    .service-card .icon {
+        font-size: 36px; /* Ícones menores */
+    }
+
+    .service-card h3 {
+        font-size: 14px; /* Subtítulo menor */
+    }
+
+    .service-card p {
+        font-size: 12px; /* Texto menor */
+    }
+}
+
 
 /*Contact*/
 .s-contact {
