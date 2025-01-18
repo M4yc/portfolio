@@ -317,52 +317,60 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; 
+    min-height: 100vh; 
     padding: 20px;
-    background-color: transparent; 
-    
+    background-color: transparent;
     z-index: 3;
 }
 
 .about-container {
-    background-color: #151515; 
+    background-color: #151515;
     border-radius: 10px;
     border: 1px solid #1F1F1F;
     padding: 40px;
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     max-width: 1400px;
-    
 }
 
 .about-content {
     display: flex;
     align-items: center;
     gap: 20px;
+    flex-wrap: wrap; /* Permite que os elementos se reorganizem em telas menores */
 }
 
 .about-content img {
-    max-width: 500px; 
-    max-height: 450px;
+    max-width: 450px; 
+    max-height: 400px;
     width: 100%;
     height: auto;
     border-radius: 10px;
-    object-fit: cover; 
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.about-content img:hover {
+    transform: scale(1.05); /* Zoom leve na imagem ao passar o mouse */
 }
 
 .about-text {
     max-width: 600px;
+    flex: 1;
+    text-align: left;
 }
 
 .about-text h4 {
     font-size: 20px;
     color: var(--primary-color);
+    margin-bottom: 5px;
 }
 
 .about-text h2 {
-    font-size: 40px;
+    font-size: 36px;
     margin: 5px 0;
     color: white;
 }
@@ -375,48 +383,115 @@ img {
 }
 
 .about-text p {
-    font-size: 18px;
+    font-size: 16px;
     color: gray;
     line-height: 1.6;
+    margin-bottom: 20px;
 }
 
 .social-buttons {
     padding-top: 2%;
     display: flex;
-    width: auto;
-    gap: 4%;
+    gap: 10px;
+    flex-wrap: wrap; /* Organiza os botões em múltiplas linhas, se necessário */
+    justify-content: flex-start; /* Alinhamento inicial */
+    overflow: hidden;
 }
-
+.social-buttons a{
+    overflow: hidden;
+}
 .social-btn {
     display: inline-block;
-    width: 50px; 
-    height: 50px; 
-    margin: 5px;
-    border-radius: 10px; 
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
     color: #fff;
     text-decoration: none;
-    font-size: 24px; /* TAmanho Icone*/
+    font-size: 24px;
     text-align: center;
-    line-height: 50px; 
+    line-height: 50px;
     transition: background-color 0.3s, transform 0.3s;
-}
-
-.social-btn i {
-    vertical-align: middle; 
-}
-.social-btn {
     background-color: #111;
-    overflow: hidden;
     border: 2px solid #1f1f1f;
 }
 
+.social-btn i {
+    vertical-align: middle;
+}
 
 .social-btn:hover {
     color: var(--primary-color);
-    transform: scale(1.1); 
-    border: 2px solid var(--primary-color);
-    overflow: hidden;
+    transform: scale(1.1);
+    border-color: var(--primary-color);
 }
+
+/* RESPONSIVIDADE */
+
+/* Telas médias (tablets) */
+@media (max-width: 992px) {
+    .about-container {
+        padding: 30px;
+    }
+
+    .about-content {
+        flex-direction: column; /* Elementos empilhados verticalmente */
+        gap: 30px;
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .about-text {
+        max-width: 100%;
+    }
+
+    .about-text h2 {
+        font-size: 32px;
+    }
+
+    .about-text h3 {
+        font-size: 16px;
+    }
+
+    .about-text p {
+        font-size: 15px;
+    }
+
+    .social-buttons {
+        justify-content: center; /* Alinha os botões ao centro */
+    }
+}
+
+/* Telas pequenas (celulares) */
+@media (max-width: 576px) {
+    .about-container {
+        padding: 20px;
+    }
+
+    .about-text h2 {
+        font-size: 28px; /* Título menor */
+    }
+
+    .about-text h3 {
+        font-size: 14px;
+    }
+
+    .about-text p {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .social-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 20px; /* Ícone um pouco menor */
+        line-height: 45px;
+    }
+
+    .social-buttons {
+        gap: 8px;
+    }
+}
+
+
 /* SECTION Projetos  */
 .projects {
     
@@ -474,6 +549,7 @@ img {
     padding: 15px;
     border-radius: 5px;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .company:hover {
@@ -485,16 +561,16 @@ img {
     flex: 2;
     border-radius: 5px;
     padding: 20px;
-    
 }
-.text-experience div{
+
+.text-experience div {
     color: white;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .titleExperience {
-    
     font-size: 18px;
     margin-bottom: 5px;
 }
@@ -516,6 +592,93 @@ img {
     color: white;
     line-height: 1.6;
 }
+
+/* RESPONSIVIDADE */
+
+/* Telas médias (tablets) */
+@media (max-width: 992px) {
+    .experience-grid {
+        flex-direction: column; /* Empilha os itens na vertical */
+    }
+
+    .company-list {
+        flex-direction: row; /* Lista horizontal para tablets */
+        gap: 5px;
+        justify-content: space-around;
+    }
+
+    .company {
+        flex: 1;
+        text-align: center;
+        border-left: none; /* Remove o destaque na esquerda */
+    }
+
+    .experience-details {
+        padding: 15px;
+    }
+
+    .titleExperience {
+        font-size: 16px;
+    }
+
+    .dateExperience {
+        font-size: 12px;
+    }
+
+    .companyExperience {
+        font-size: 14px;
+    }
+
+    .changeExperience {
+        font-size: 13px;
+    }
+}
+
+/* Telas pequenas (celulares) */
+@media (max-width: 576px) {
+    .s-experience {
+        padding: 5% 10px; /* Reduz o padding para caber em telas menores */
+    }
+
+    .section-title {
+        font-size: 24px; /* Reduz o tamanho do título */
+    }
+
+    .company-list {
+        flex-direction: column; /* Lista vertical */
+        gap: 10px;
+        justify-content: flex-start;
+    }
+
+    .company {
+        padding: 10px;
+        font-size: 14px;
+        text-align: left;
+    }
+
+    .experience-details {
+        padding: 10px;
+    }
+
+    .titleExperience {
+        font-size: 16px; /* Ajusta o título */
+    }
+
+    .dateExperience {
+        font-size: 12px; /* Ajusta a data */
+    }
+
+    .companyExperience {
+        font-size: 14px;
+    }
+
+    .changeExperience {
+        font-size: 12px;
+        line-height: 1.4; /* Reduz o espaçamento entre linhas */
+    }
+}
+
+
 /* PROJECTS */
 .s-projects {
     padding: 60px 10%;
@@ -530,7 +693,7 @@ img {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas no padrão */
     gap: 20px;
 }
 
@@ -542,7 +705,8 @@ img {
     text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.project-card:hover{
+
+.project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0px 0px 20px rgba(73, 73, 73, 0.2);
 }
@@ -581,28 +745,30 @@ img {
     margin-right: 5px;
     margin-bottom: 5px;
 }
-.tags .span-html{
+
+/* Especificação das cores por tags */
+.tags .span-html {
     border: 1px solid rgb(255, 81, 0);
 }
-.tags .span-css{
+.tags .span-css {
     border: 1px solid rgb(0, 195, 255);
 }
-.tags .span-javascript{
+.tags .span-javascript {
     border: 1px solid rgb(255, 251, 0);
 }
-.tags .span-arduino{
+.tags .span-arduino {
     border: 1px solid #009297;
 }
-.tags .span-python{
+.tags .span-python {
     border: 1px solid #33638B;
 }
-.tags .span-game{
+.tags .span-game {
     border: 1px solid #ff0202;
 }
-.tags .span-ui{
+.tags .span-ui {
     border: 1px solid var(--primary-color);
 }
-.tags .span-figma{
+.tags .span-figma {
     border: 1px solid orangered;
 }
 
@@ -612,9 +778,9 @@ img {
 }
 
 .project-btn {
-    font-size: 16px; /* Diminui o tamanho do texto */
+    font-size: 16px;
     color: #aaaaaa;
-    font-family: 'Poppins', sans-serif; /* Usa a fonte Poppins */
+    font-family: 'Poppins', sans-serif;
     font-weight: 800;
     cursor: pointer;
     position: relative;
@@ -623,7 +789,7 @@ img {
     text-transform: uppercase;
     transition: color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     overflow: hidden;
-    text-decoration: none; /* Remove o sublinhado padrão de links */
+    text-decoration: none;
 }
 
 .project-btn:after {
@@ -633,7 +799,7 @@ img {
     left: 50%;
     width: 0;
     height: 2px;
-    background-color: var(--primary-color); /* Linha roxa */
+    background-color: var(--primary-color);
     transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -645,6 +811,73 @@ img {
     width: 100%;
     left: 0;
 }
+
+/* RESPONSIVIDADE */
+
+/* Telas médias (tablets) */
+@media (max-width: 992px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas em tablets */
+        gap: 15px;
+    }
+
+    .project-card img {
+        height: 180px; /* Reduz a altura da imagem */
+    }
+
+    .project-card h3 {
+        font-size: 18px; /* Tamanho menor para o título */
+    }
+
+    .project-card p {
+        font-size: 13px; /* Texto menor */
+    }
+
+    .project-btn {
+        font-size: 14px; /* Botões menores */
+    }
+}
+
+/* Telas pequenas (celulares) */
+@media (max-width: 576px) {
+    .projects-grid {
+        grid-template-columns: 1fr; /* 1 coluna em celulares */
+        gap: 10px;
+    }
+
+    .s-projects {
+        padding: 40px 5%; /* Reduz o padding */
+    }
+
+    .s-projects h2 {
+        font-size: 24px; /* Título menor */
+    }
+
+    .project-card {
+        padding: 15px; /* Reduz padding do card */
+    }
+
+    .project-card img {
+        height: 150px; /* Imagens menores */
+    }
+
+    .project-card h3 {
+        font-size: 16px; /* Título reduzido */
+    }
+
+    .project-card p {
+        font-size: 12px; /* Texto reduzido */
+    }
+
+    .tags span {
+        font-size: 10px; /* Tags menores */
+    }
+
+    .project-btn {
+        font-size: 12px; /* Botões mais compactos */
+    }
+}
+
 
 
 /* Services */
